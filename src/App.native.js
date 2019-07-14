@@ -24,8 +24,7 @@ class App extends Component {
         
         <Header headerText="Home"/>
         <NewsList />
-        <Button>Load News</Button>
-      </ScrollView>
+        </ScrollView>
     </SafeAreaView>
   </Fragment>;
   }

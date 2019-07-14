@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { ScrollView, ActivityIndicator} from 'react-native';
 import axios from 'axios';
 import NewsDetail from './NewsDetail';
+import Button from './Button';
 
 class NewsList extends Component {
   state = { news: [] };
@@ -15,12 +16,12 @@ class NewsList extends Component {
   renderNews() {
  
     return this.state.news.map(news =>
-      <NewsDetail key={news.source.title} news={news} />);
+      <NewsDetail key={news.title} news={news} />);
   }
 
   render() {
     console.log(this.state);
-    const spinner = this.state.news.length === 0 ? <ActivityIndicator size="large" color="#0000ff" /> : null;
+    const spinner = this.state.news.length === 0 ? <Fragment><ActivityIndicator size="large" color="#0000ff" /><Button>Loading News</Button></Fragment> : null;
     return (
       <ScrollView>
         {spinner}

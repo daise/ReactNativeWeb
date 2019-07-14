@@ -6,13 +6,14 @@ import Button from './Button';
 
 const NewsDetail = ({ news }) => {
   console.log(news)
-  const { title, artist, urlToImage, image, url } = news;
+  const { title, artist, urlToImage, image, url, description, content } = news;
   const {
     thumbnailStyle,
     headerContentStyle,
     thumbnailContainerStyle,
     headerTextStyle,
-    imageStyle
+    imageStyle,
+    descriptionTextStyle,
   } = styles;
 
   return (
@@ -26,7 +27,6 @@ const NewsDetail = ({ news }) => {
       </View>
       <View style={headerContentStyle}>
         <Text style={headerTextStyle}>{title}</Text>
-        <Text>{artist}</Text>
       </View>
     </CardSection>
 
@@ -36,7 +36,13 @@ const NewsDetail = ({ news }) => {
         source={{ uri: urlToImage }}
       />
     </CardSection>
-
+    <CardSection>
+    <View >
+      <Text style={descriptionTextStyle}>{description}</Text>
+      <Text style={descriptionTextStyle}>{content}</Text>
+      <Text>{artist}</Text>
+    </View>
+    </CardSection>
     <CardSection>
       <Button onPress={() => Linking.openURL(url)}>
         Read More
@@ -49,10 +55,17 @@ const NewsDetail = ({ news }) => {
 const styles = {
   headerContentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   headerTextStyle: {
-    fontSize: 18
+    fontSize: 20,
+    marginRight: 60,
+    width: 900
+  },
+  descriptionTextStyle: {
+    fontSize: 18,
+    marginRight: 60,
+    width: 900
   },
   thumbnailStyle: {
     height: 50,

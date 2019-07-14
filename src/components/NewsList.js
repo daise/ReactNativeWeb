@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, ActivityIndicator} from 'react-native';
 import axios from 'axios';
 import NewsDetail from './NewsDetail';
 
@@ -20,9 +20,10 @@ class NewsList extends Component {
 
   render() {
     console.log(this.state);
-
+    const spinner = this.state.news.length === 0 ? <ActivityIndicator size="large" color="#0000ff" /> : null;
     return (
       <ScrollView>
+        {spinner}
         {this.renderNews()}
       </ScrollView>
     );

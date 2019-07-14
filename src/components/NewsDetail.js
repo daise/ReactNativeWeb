@@ -21,7 +21,7 @@ const NewsDetail = ({ news }) => {
       <View style={thumbnailContainerStyle}>
         <Image
           style={thumbnailStyle}
-          source={{ uri: image }}
+          source={{ uri: urlToImage }}
         />
       </View>
       <View style={headerContentStyle}>
@@ -33,7 +33,7 @@ const NewsDetail = ({ news }) => {
     <CardSection>
       <Image
         style={imageStyle}
-        source={{ uri: image }}
+        source={{ uri: urlToImage }}
       />
     </CardSection>
 

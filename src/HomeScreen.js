@@ -13,13 +13,9 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>
-        Welcome to React Native Web universal app!
+        Welcome to React Native Web universal app! vvvv
       </Text>
-      <Text style={styles.instructions}>
-        This component is shared between web and react environment. To see how
-        it works, just edit the HomeScreen.js
-      </Text>
-      <Text style={styles.instructions}>{instructions}</Text>
+      
     </View>
   );
 };

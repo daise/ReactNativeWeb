@@ -1,4 +1,4 @@
-package com.rnwboilerplate;
+package com.latestnews;
 
 import android.app.Application;
 
